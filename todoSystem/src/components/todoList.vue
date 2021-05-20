@@ -3,6 +3,11 @@
     <van-sticky>
     <van-button type="primary" style="width: 100%;">Todo 首頁</van-button>
     </van-sticky>
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+      <van-swipe-item v-for="item in songList[0].swiperImg" :key="item">
+        <img :src="item" alt="">
+      </van-swipe-item>
+    </van-swipe>
     <ul class="todo-container">
       <li v-for="(item, index) in list" :key="item + index">
         <div class="title">
@@ -41,7 +46,14 @@ export default {
     },
     data() {
       return {
-        active: 0
+        active: 0,
+        songList:[{
+          link:"",
+          logoImg: "",
+          swiperImg: [],
+          song:"",
+          singer: ""
+        }],
       }
     }
   },
