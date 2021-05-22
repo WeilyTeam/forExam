@@ -1,13 +1,17 @@
 <template>
-  <todo-list :list="list"></todo-list>
+  <div>
+    <swipper />
+    <todo-list :list="list" />
+  </div>
+
 </template>
 
 <script>
 import todoList from './todoList';
-
+import swipper from './swipper'
 export default {
   components: {
-    todoList
+    todoList,swipper
   },
   data() {
     return {

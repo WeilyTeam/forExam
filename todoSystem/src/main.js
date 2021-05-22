@@ -7,6 +7,7 @@ import {get} from './utils/http';
 
 import Vant from "vant";
 import "vant/lib/index.css";
+
 require("@/mock/mock")
 
 
