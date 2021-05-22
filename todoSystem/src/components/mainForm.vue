@@ -21,8 +21,10 @@ export default {
   },
   methods: {
     async handleGetList() {
-      this.list = await this.$http()
-
+      let token = localStorage.getItem("token");
+      let res  = await this.$http.getList({token})
+      console.log(res)
+      this.list = res.list
     }
   },
   mounted() {

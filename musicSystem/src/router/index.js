@@ -16,23 +16,20 @@ export default new Router({
       path: "/main",
       name: "main",
       component: main,
-      redirect: "home",
+      redirect: {
+        name:"home"
+      },
       children: [
         {
-          path: "/home",
+          path: "home",
           name: "home",
 
-          component: () => import("@/components/mainForm")
+          component: () => import("@/components/mainPage")
         },
         {
-          path: "/mytodo",
-          name: "mytodo",
-
-          component: () => import("@/components/mytodo")
-        },
-        {
-          path: "/mine",
+          path: "mine",
           name: "mine",
+
           component: () => import("@/components/mine")
         }
       ]

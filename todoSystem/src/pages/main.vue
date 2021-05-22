@@ -1,6 +1,6 @@
 <template>
   <div class="main-container">
-    <router-view/>
+      <router-view/>
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o" @click="handleChangeRouter('/home')">主页</van-tabbar-item>
       <van-tabbar-item icon="friends-o" @click="handleChangeRouter('/mytodo')">我的TODO</van-tabbar-item>
@@ -26,4 +26,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

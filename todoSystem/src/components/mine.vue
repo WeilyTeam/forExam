@@ -1,41 +1,35 @@
 <template>
- <div>
-   <van-sticky>
-     <van-button type="primary" style="width: 100%;">我的信息</van-button>
-   </van-sticky>
+  <div>
+    <el-divider><i class="el-icon-mobile-phone"/>我的信息</el-divider>
+    <el-card class="box-card">
+      <van-contact-card
+        type="edit"
+        :tel="myInfo.user_mobile"
+        :name="myInfo.username"
+        :editable="false"/>
+    </el-card>
 
-  <van-contact-card type="edit" name="张三" tel="13000000000" :editable="false" />
   </div>
 </template>
 <script>
 export default {
-  props: {
-    list: {
-      default() {
-        return [
-          {
-            id: "1",
-            name: "张三",
-            tel: "13000000000",
-            task: "拯救世界",
-            isFinish: true,
-          },
-          {
-            id: "2",
-            name: "小四",
-            tel: "12930",
-            task: "获得吉尼斯纪录",
-            isFinish: false,
-          },
-        ];
-      },
-    },
-    data(){
-        return {
-            active:0
-        }
+  data() {
+    return {
+      active: 0,
+      myInfo: {
+        user_id: 1,
+        username: "张三",
+        user_mobile: "13000000000",
+      }
     }
   },
+  async mounted() {
+    const token = localStorage.getItem("token")
+    let res = await this.$http.getUserInfo({token})
+    console.log(res)
+    this.myInfo = res
+    localStorage.setItem("userInfo",res)
+  }
 };
 </script>
 <style scoped>

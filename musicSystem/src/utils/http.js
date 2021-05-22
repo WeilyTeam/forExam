@@ -3,12 +3,13 @@ import axios from 'axios'
 import router from '@/router'
 import {Notify} from "vant"
 // 重新创建一个加载状态
-//重新创建一个axios 实例，统一管理实例请求
+
 const instance = axios.create({
   timeout: 10000,
-  baseURL: 'http://localhost:3000/api',
+  baseURL: '/api'
 })
 // baseUrl
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 let httpCode = {
   400: '请求参数错误',
@@ -22,14 +23,7 @@ let httpCode = {
 }
 
 instance.interceptors.request.use(config => {
-  // if (localStorage.getItem("token")) {
-  //   if (localStorage.getItem("token")){
-  //
-  //   }
-  // }
-  console.log(config)
   if (config.method === 'get') {
-
     config.params = {
       ...config.params,
     }
@@ -40,24 +34,20 @@ instance.interceptors.request.use(config => {
 })
 
 instance.interceptors.response.use(res => {
-  // console.log(res)
-
   if (res.status === 200) {
-    console.log(res)
     Notify({
-      message: res.data.msg,
+      message: res.data.message,
       type: "success"
     });
     return Promise.resolve(res.data)
   } else {
     Notify({
-      message: res.data.msg,
+      message: res.data.message,
       type: "danger"
     });
     return Promise.reject(res.data)
   }
 }, error => {
-  console.log(error)
   if (error.response) {
     // 根据请求失败的http状态码去给用户相应的提示
     let tips = error.response.status in httpCode ? httpCode[error.response.status] : error.response.data.message

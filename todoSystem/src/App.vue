@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition appear-active-class="animate__animated animate__fadeIn">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -12,4 +14,8 @@ export default {
 </script>
 
 <style>
+body {
+  width: 100vw;
+  height: 100vh;
+}
 </style>

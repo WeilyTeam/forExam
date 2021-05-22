@@ -1,11 +1,10 @@
 <template>
   <div>
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-      <van-swipe-item v-for="(item,index) in imgList" :key="item+index">
-        <img :src="item" alt="item">
-      </van-swipe-item>
-
-    </van-swipe>
+    <el-carousel >
+      <el-carousel-item v-for="item in imgList" :key="item">
+        <img  :src="item" alt="">
+      </el-carousel-item>
+    </el-carousel>
   </div>
 </template>
 
@@ -16,16 +15,21 @@ export default {
   name: "swipper",
   data() {
     return {
-      imgList: []
+      imgList: [
+        "http://h2.ioliu.cn/bing/BBNPGrande_ZH-CN4071551965_1920x1080.jpg?imageslim",
+        "http://h2.ioliu.cn/bing/SocaCycles_ZH-CN3583247274_1920x1080.jpg?imageslim",
+        "http://h2.ioliu.cn/bing/BBNPGrande_ZH-CN4071551965_1920x1080.jpg?imageslim",
+        "http://h2.ioliu.cn/bing/SocaCycles_ZH-CN3583247274_1920x1080.jpg?imageslim",
+      ]
+    }
+  },
+  computed: {
+    todoImg() {
+      // return
     }
   },
   methods: {
-    async handleGetImg() {
-      this.imgList.push(Random.image('200x100', '#4A7BF7', "Todo"))
-      for (let i = 0; i < 5; i++) {
-        this.imgList.push(Random.image('200x100', '#4A7BF7', Random.csentence(5)))
-      }
-    }
+    async handleGetImg() {}
 
   },
   mounted() {
@@ -37,7 +41,4 @@ export default {
 
 <style scoped>
 
-img {
-  width: 100%;
-}
 </style>
