@@ -3,7 +3,9 @@
         <!-- 头部导航 -->
         <header_titleBar title="登录"></header_titleBar>
         <main>
-            <div class="logo"><img :src="logo" alt="logo" /></div>
+            <div class="logo">
+	    <!--<img :src="logo" alt="logo" />-->
+	    </div>
 
             <!-- 注册表单 -->
             <div v-show="!ONLOGIN" class="register-form">
@@ -102,13 +104,13 @@
 
 <script>
 import axios from "axios";
-import logo from "../../assets/logo.png";
+//import logo from "../../assets/logo.png";
 import header_titleBar from "../../components/header-titileBar";
 export default {
     name: "login-index",
     data() {
         return {
-            logo: logo,
+            //logo: logo,
             username: "",
             emailaddress: "",
             validatecode: "",
