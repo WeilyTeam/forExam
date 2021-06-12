@@ -1,9 +1,9 @@
 <template>
     <div>
         <header>
-            <p style="font-size: 0.3rem; font-weight: bold; padding: 0.2rem">
+            <h4 style="text-align:center;font-size:28px;">
                 消息中心
-            </p>
+            </h4>
         </header>
         <main>
             <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
@@ -23,7 +23,9 @@
                                 height="0.8rem"
                                 src="https://img.yzcdn.cn/vant/cat.jpeg"
                             />
-                            <label for="avatar">{{ item }}</label>
+                            <label for="avatar">
+			    <span>{{ item }}</span>
+			    </label>
                         </router-link>
                     </div>
                 </van-list>

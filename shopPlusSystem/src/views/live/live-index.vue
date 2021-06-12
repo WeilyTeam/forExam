@@ -39,10 +39,11 @@
                 >
                     <van-grid :border="false" :column-num="2">
                         <van-grid-item v-for="subindex in 8" :key="subindex">
-                            <router-link to="/live-detail">
+                            <router-link to="/live"">
                                 <van-image
                                     src="https://img.yzcdn.cn/vant/apple-1.jpg"
-                                />{{ index }}.{{ subindex }}
+                                />
+				<h3 class="order">{{ index }}.{{ subindex }}</h3>
                             </router-link>
                         </van-grid-item>
                     </van-grid>
@@ -95,5 +96,10 @@ export default {
 .mainView {
     height: 100vh;
     margin-top: 0.2rem;
+}
+.order{
+    font-size:28px;
+    text-align:center;
+    color:#93c5f9;
 }
 </style>

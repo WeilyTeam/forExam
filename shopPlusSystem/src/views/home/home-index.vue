@@ -16,7 +16,6 @@
             </div>
         </header>
         <main>
-            <p class="desText">聚优惠</p>
             <div class="swiper">
                 <van-swipe class="my-swipe" :autoplay="3000">
                     <van-swipe-item
@@ -128,13 +127,16 @@ export default {
     position: sticky;
     top: 0;
     display: flex;
-    align-self: flex-start;
+    align-self: center;
+    justify-content:center;
+    height:1rem;
 }
 .logo {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.6rem;
+    height: 0.6rem;
     display: inline-block;
     margin: 0.1rem 0 0 0.1rem;
+    
 }
 .centerFix {
     flex-grow: 1;
