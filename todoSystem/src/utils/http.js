@@ -6,7 +6,7 @@ import {Notify} from "vant"
 //重新创建一个axios 实例，统一管理实例请求
 const instance = axios.create({
   timeout: 10000,
-  baseURL: 'http://localhost:3000/api',
+  baseURL: '/api',
 })
 // baseUrl
 

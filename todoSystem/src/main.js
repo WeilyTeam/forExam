@@ -11,6 +11,7 @@ import "./assets/css/animate.min.css";
 import {Notify} from "vant";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+require("./mock/mock")
 
 Vue.config.productionTip = true
 Vue.prototype.$message = Notify

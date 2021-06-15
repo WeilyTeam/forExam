@@ -12,7 +12,6 @@ import live_detail from '@/components/live-detailPage'
 import talk_detail from '@/components/talk-detailPage'
 
 
-
 Vue.use(Router)
 
 const originalPush = Router.prototype.push
@@ -24,7 +23,7 @@ Router.prototype.push = function push(location) {
 export default new Router({
   mode: 'history',
   scrollBehavior() {
-    return { x: 0, y: 0 };
+    return {x: 0, y: 0};
   },
   routes: [
     {
@@ -50,7 +49,7 @@ export default new Router({
       meta: {
         title: '直播页面'
       }
-    },{
+    }, {
       path: '/talk-detail',
       name: 'talk-detail',
       component: talk_detail,

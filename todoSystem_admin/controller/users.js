@@ -9,14 +9,21 @@ const secretKey = '123114655sad46aa';
 
 
 const register = (req, res, next) => {
-
+    console.log(req.body)
     addUser(req.body,
         (error, data, fields) => {
+            console.log(error, data)
             if (error) {
                 next(error);
             } else {
+                const {insertId} = data;
+                const token = jwt.sign({user_id: insertId}, secretKey);
+
                 return res.send(
-                    {message: '注册成功'}
+                    {
+                        message: '注册成功',
+                        token
+                    }
                 );
             }
         });
@@ -30,7 +37,7 @@ const modify = (req, res, next) => {
             if (error) {
                 next(error);
             } else {
-                return res.send(
+                return res = (
                     {message: '注册成功'}
                 );
             }
@@ -62,14 +69,14 @@ const login = (req, res, next) => {
 }
 
 
-const userinfo =  (req, res, next) => {
-     getUserInfoByToken( req.query,
+const userinfo = (req, res, next) => {
+    getUserInfoByToken(req.query,
         (err, data) => {
             console.log(...data)
 
             return res.send({
                 ...data[0],
-                msg:"获取成功"
+                msg: "获取成功"
             })
         }
     )

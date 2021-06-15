@@ -25,5 +25,5 @@ const getImg = (val) => {
 
   return imgList
 }
-Mock.mock('/api', getPersonTodo)
+// Mock.mock('/api', getPersonTodo)
 Mock.mock('/api/img', getImg)

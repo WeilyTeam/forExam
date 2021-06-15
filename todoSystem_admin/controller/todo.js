@@ -12,6 +12,7 @@ const {
 // 获取当前未完成的任务
 const current = (req, res, next) => {
     getNowTask(req.query, (err, data,) => {
+        console.log(err)
         if (err) {
             return res.send({
                 msg: "获取失败",

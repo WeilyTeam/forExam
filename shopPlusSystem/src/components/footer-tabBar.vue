@@ -7,7 +7,7 @@
             <van-tabbar-item to="/talk" badge="5" icon="comment-o">聊天</van-tabbar-item>
             <!-- <van-tabbar-item to="/my" dot icon="manager-o">我的</van-tabbar-item> -->
             <van-tabbar-item @click="isLogin" icon="manager-o">我的</van-tabbar-item>
-            
+
         </van-tabbar>
     </footer>
 </template>
