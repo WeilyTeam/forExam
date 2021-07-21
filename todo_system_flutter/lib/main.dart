@@ -11,6 +11,7 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       home: Home(),
       title: "Todo_system",
+      debugShowCheckedModeBanner: false,
       routes: router(),
       initialRoute: "/",
     );

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:todo_system_flutter/pages/Home/index.dart';
 
 class TodoContainer extends StatelessWidget {
@@ -39,7 +40,7 @@ class TodoItem extends StatefulWidget {
           key: key,
         );
 
-  bool complete;
+  RxBool complete;
   int id;
   String content;
 
@@ -57,13 +58,11 @@ class _TodoItemState extends State<TodoItem> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Checkbox(
-            value: widget.complete,
+        Obx(() => Checkbox(
+            value: widget.complete.value,
             onChanged: (bool val) {
-              return setState(() {
-                widget.complete = !widget.complete;
-              });
-            }),
+              return widget.complete.value = !widget.complete.value;
+            })),
         Text(widget.content)
       ],
     );
