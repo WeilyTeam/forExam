@@ -1,0 +1,20 @@
+数据库连接信息配置目录： ./shopsystem/dao/pool.js
+默认连接地址:localhost
+默认密码：root
+
+数据库连接工具和版本信息:
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : localhost_3306
+ Source Server Type    : MySQL
+ Source Server Version : 80019
+ Source Host           : localhost:3306
+ Source Schema         : shop
+
+ Target Server Type    : MySQL
+ Target Server Version : 80019
+ File Encoding         : 65001
+
+ Date: 13/06/2021 18:31:52
+*/
